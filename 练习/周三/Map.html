@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const map = new Map([
+            ['assa','bsdaf'],
+            ['sad','wqewqe'],
+            ['basd','rurtuy']
+        ])
+        for(var key of map.keys()){
+            console.log(key)
+        }
+        console.log('------------------')
+
+
+        for(var value of map.values()){
+            console.log(value)
+        }
+        console.log('------------------')
+
+        for (var item of map.entries()){
+            console.log(item[0],item[1])
+        }
+        console.log('-----------------')
+
+        for (var [key, value] of map.entries()){
+            console.log(key, value)
+        }
+
+        map.forEach((val, index, map)=>{
+            console.log(val, index, map)
+        })
+
+    </script>
+</body>
+</html>

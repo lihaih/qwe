@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <input type="number" />
+    <button class="btn">添加</button>
+
+    <ul class="nums">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    
+
+    <script>
+        let number = document.querySelector('[type="number"]')
+        let btn = document.querySelector('.btn')
+        let nums = document.querySelector('.nums')
+        btn.onclick = function(){
+            nums.innerHTML += `<li>${number.value}</li>`
+        }
+        nums.onclick = function(ev){
+            console.log(this)
+            console.log(ev.target)
+            if('LI' == ev.target.nodeName){
+                console.log(ev.target.innerText) 
+            }
+        }
+    </script>
+</body>
+</html>

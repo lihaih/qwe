@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">点我</button>
+    <lo class="list"></lo>
+    
+    <script>
+        let btn = document.querySelector('.btn')
+        let list = document.querySelector('.list')
+        btn.onclick = function(){
+            let fragment = document.createDocumentFragment()
+            let li = document.createElement('li')
+            for(let i=0; i<=5; i++){
+                let li2 = li.cloneNode(true)
+                li2.innerText = i+1
+                fragment.appendChild(li2)
+            }
+            console.log(fragment)
+            list.appendChild(fragment)
+        }
+
+
+        
+    </script>
+</body>
+</html>

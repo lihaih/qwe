@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list>*:hover{
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="item1" id="item1">1</li>
+        <li class="item2">2</li>
+        <li class="item3">3</li>
+        <li class="item4">4</li>
+        <li class="item5">5</li>
+        <li class="item6">6</li>
+        <li class="item7">7</li>
+        <li class="item8">8</li>
+        <li class="item9">9</li>
+        <li class="item10">10</li>
+        
+    </ul>
+    
+    <script src="./JQ/jquery.min.js"></script>
+    <script>
+
+        $('.list').on('click','li',(ev)=>{
+            console.log(1,ev.target)
+        })
+        let click2 = (ev)=>{
+            console.log(2,ev.target)
+            $('.list').off('click',click2)
+        }
+        $('.list').on('click','li',click2)
+
+    </script>
+</body>
+</html>

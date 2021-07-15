@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        <span class="h">00</span>:<span class="m">00</span>:<span class="s">00</span>
+        <button class="btn">停止</button>
+    </h2>
+    <script>
+        var h = document.querySelector('.h')
+        var m = document.querySelector('.m')
+        var s = document.querySelector('.s')
+        var btn = document.querySelector('.btn')
+
+        var qwe = setInterval(function(){
+            var time= new Date()
+            console.log()
+            h.innerHTML = time.getHours()
+            m.innerHTML = time.getMinutes()
+            s.innerHTML = time.getSeconds()
+        })
+        btn.onclick = function(){
+            clearInterval(qwe)
+            console.log('时间 停止')
+        }
+        
+
+    </script>
+</body>
+</html>

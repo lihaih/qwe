@@ -1,0 +1,55 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-19 16:35:29
+ * @LastEditTime: 2020-09-19 17:07:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\文件上传.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="upload" onsubmit="uploadPicClick"   method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="MAX_FILE_SIZE" value="3000000">
+        <input type="file" name="pic" multiple>
+        <input type="submit" name="" value="上传">
+    </form>
+    <script>
+        let upload = document.querySelector(".upload");
+upload.onsubmit = function (ev) {
+    
+    // 获取表单数据
+    let oData = new FormData(upload);
+    //添加字段fhadkhy
+    oData.append("picDir", "img1");
+    let xhr = null;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("Microsoft.XMLHTTP")
+    }
+    xhr.open("POST", "http://192.168.6.191/ajax/upload.php", true);
+    xhr.send(oData);
+    xhr.onreadystatechange = function () {
+        if (4 == xhr.readyState && 200 == xhr.status) {
+            if ("uploadSuccess" === xhr.responseText) {
+                alert("上传成功！");
+            } else if ("uploadError" === xhr.responseText) {
+                alert("上传失败！");
+            }
+            document.querySelector('[type="file"]').value = ''
+        }
+    }
+    ev.preventDefault(); // 兼容标准浏览器
+    // window.event.returnValue = false; // 兼容IE6~8
+    return false;
+}
+
+    </script>
+</body>
+</html>

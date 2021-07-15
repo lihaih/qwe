@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <a href="./bb1.html">00000000</a><br>
+    <button class="back">后退</button>
+    <button class="forward">前进</button><br>
+    <input type="text">
+    <script>
+        let back = document.querySelector('.back')
+        let forward = document.querySelector('.forward')
+        let all = document.querySelector('[type="text"]')
+        back.onclick = function(){
+            history.back()
+        }
+        forward.onclick = function(){
+            history.forward()
+        }
+        all.onchange = function(){
+            history.go(parseInt(this.value))
+        }
+    </script>
+    
+</body>
+</html>

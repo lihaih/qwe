@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(var i=1; i<=9; i++){
+            var str = ''
+            for(var j=i ; j<=9; j++){
+                var result = ''
+                result = i*j < 10 ? ' ' + (i*j): (i*j)
+                str += `${i}*${j}=${result}`
+                str += '\t'
+            }
+            console.log( str )
+        }
+    </script>
+    <!-- <script>
+        for(var i=1; i<=9; i++){
+            var str = ''
+            for(var j=i; j<=9; j++){
+                var result = ''
+                result = i*j < 10 ? ' ' + (i*j): (i*j)
+                 
+                str += `${i}*${j}=${result}`
+                str += '\t'
+            }
+            console.log( str )
+        }
+    </script> -->
+</body>
+</html>

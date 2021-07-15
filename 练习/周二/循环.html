@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div>div{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <input type="button" value="军事" class="active">
+        <input type="button" value="游戏" class="active1">
+        <input type="button" value="娱乐" class="active2">
+        <div class="acy">军事</div>
+        <div id="active1">游戏</div>
+        <div id="active2">娱乐</div>
+    </div>
+    <script>
+        // let asd = document.getElementById('wrap')
+        let add = document.getElementsByTagName('input')
+        let all = document.querySelector('#wrap>.acy')
+        console.log(111)
+        let obk = document.getElementById('active1')
+        let fbx = document.getElementById('active2')
+
+        add[0].mouseout                                  = function(){
+            all.style.display='block'
+
+            // ibk.style.display='block'
+            // fbx.style.display='block'
+        }
+        add[1].onclick = function(){
+            obk.style.display='block'
+
+            // all.style.display='block'
+            // fbx.style.display='block'
+        }
+        add[2].onclick = function(){
+            fbx.style.display='block'
+
+            // all.style.display='block'
+            // ibk.style.display='block'
+        }
+    </script>
+</body>
+</html>

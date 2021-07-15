@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        Array.prototype.all = function(){
+            var arr = 0
+            for(var i=1; i<this.length; i++){
+                if(this[arr]<this[i]){
+                    arr = i
+                }
+            }
+
+            return{
+                arr,
+                value:this[arr]
+            }
+
+        }
+        var ass = [12,22,3,2,1,113,1,99]
+        console.log(ass.all())
+    </script>
+</body>
+</html>

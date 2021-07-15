@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">按钮</button>
+    <script>
+
+        var obj = {
+            name:'小敏',
+            age:18,
+            say:function(){
+                console.log(this)
+            }
+        }
+        console.log(obj)
+        obj.say()
+
+        class Person{
+            constructor(name){
+                this.name = name
+            }
+            say(){
+                console.log(this)
+            }
+        }
+        var q1 = new Person('h1')
+        var q2 = new Person('h2')
+        q1.say()
+        q2.say()
+        
+        console.log("==============")
+
+        function fun(){
+            console.log(this)
+        }
+
+        fun()
+        console.log(this)
+
+        setTimeout(function(){
+            console.log(this)
+        },0)
+         
+
+         setTimeout( () => {
+             console.log(this)
+         },1000)
+
+         console.log('-----------------')
+         var btn = document.querySelector('.btn')
+         btn.oncick=function(){
+           
+
+
+             setTimeout( () => {
+                 console.log(this)
+             },0)
+         }
+
+
+
+    </script>
+</body>
+</html>

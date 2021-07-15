@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // function Person(){} //es5声明类
+        // class Person{} // es6声明类
+        // 实例化
+        // var p1 = new Person()
+        // var n1 = new Number()
+
+        // 面向过程思想创建
+        var o1 = {}
+        var o2 = new Object()
+        
+        // 面向对象思想创建
+        // 工厂方式
+        function createPerosn(){
+            return new Object()
+        }
+        // 构造函数
+        function Person(){
+        }
+        // class
+        class Human{}
+
+        var p1 = createPerosn()
+        var p2 =  new Person()
+        var p3 = new Human()
+
+        console.log( o1, o2, p1, p2, p3 )
+
+
+        
+    </script>
+</body>
+</html>

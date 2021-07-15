@@ -1,0 +1,47 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-21 17:38:26
+ * @LastEditTime: 2020-09-22 08:43:53
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周六\axios.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./lib/axios.min.js"></script>
+    <script>
+        // 添加请求拦截器
+        axios.interceptors.request.use(function (config) {
+            // 在发送请求之前做些什么
+            return config;
+        }, function (error) {
+            // 对请求错误做些什么
+            return Promise.reject(error); 
+        })
+
+        axios.get('http://192.168.6.48/ajax/server2.php?name=list')
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        let param = new URLSearchParams()
+        param.append("name", "list")
+        axios.post('http://192.168.6.191/ajax/server2.php', param)
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                }); 
+    </script>
+</body>
+</html>

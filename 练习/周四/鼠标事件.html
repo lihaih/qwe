@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bok{
+            width: 100px;
+            height: 100px;
+            background:red;    
+
+            }
+    </style>
+</head>
+<body>
+    <button>啦啦</button>
+    <div class="bok"></div>
+    <script>
+        let all = document.querySelector('button')
+        all.onclick=function(){
+            console.log('单击')
+        }
+        
+        all.ondblclick=function(){
+            console.log('双击')
+        }
+        
+        all.oncontextmenu=function(){
+            console.log('右击')
+        }
+        
+        all.onmouseover=function(){
+            let bok = document.createElement('.bok')
+            
+            console.log(bok)
+        }
+        all.onmouseout=function(){
+            let arr = document.createElement('span')
+            arr.innerText = '阿斯达四'
+            console.log(arr)
+        }
+    </script>
+</body>
+</html>

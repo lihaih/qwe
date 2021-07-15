@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: #666;
+        }
+        .navbar{
+            display: flex;
+            width: 900px;
+            margin: 0 auto;
+        }
+        .navbar>li{
+            flex-grow: 1;
+            background: rgb(214, 214, 214);
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            margin-right: 1px;
+            cursor: pointer;
+        }
+        .navbar>li:hover>a{
+            color: #fff;
+        }
+        .popMenu{
+            background: blue;
+            margin-top: 1px;
+            display:  none;
+        }
+
+        .popMenu>li{
+            text-align: left;
+            padding: 0 10px;
+            border-bottom: 1px solid #fff;
+        }
+        .popMenuShow{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="navbar">
+        <li>1</li>
+        <li>1</li>
+        <li>
+            <a href="javascript:;" target="_blank" class="menuBtn">鼠标进入时显示菜单</a>
+            <ul class="popMenu">
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+                <li>1</li>
+            </ul>
+        </li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+    </ul>
+    <script>
+        let menuBtn = document.querySelector('.menuBtn')
+        let popMenu = document.querySelector('.popMenu')
+        let t1 = null
+
+        menuBtn.onmouseover = function(){
+            // 显示菜单
+            popMenu.classList.add('popMenuShow')
+        }
+        menuBtn.onmouseout = function(){
+            // 隐藏菜单
+            t1 = setTimeout(() => {
+                popMenu.classList.remove('popMenuShow')
+            }, 200);
+        }
+
+        popMenu.onmouseover = function(){
+            if(t1){
+                clearTimeout(t1)
+            }
+        }
+        popMenu.onmouseout = function(){
+            // 隐藏菜单
+            t1 = setTimeout(() => {
+                popMenu.classList.remove('popMenuShow')
+            }, 200);
+        }
+      
+    </script>
+</body>
+</html>

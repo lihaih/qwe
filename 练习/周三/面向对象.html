@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 工厂模式
+        var p1 = caretPosition('小马','男')
+        var p2 = caretPosition('小红','女')
+        console.log( p1,p2 )
+        p1.say()
+        p2.say()
+        function caretPosition(naem, sex){
+            var obj = new Object()
+            obj.naem = naem
+            obj.sex = sex
+            obj.say = function(){
+                console.log(`大家好我叫：${this.name},我是${this.sex}人`)
+            }
+            return obj
+        }
+
+
+
+        function all(name,age,sex){
+            this.name = name
+            this.age = age
+            this.sex =sex
+            this.say = function(){
+                console.log(`大家好我叫：${this.name},今年${this.age}岁，我是${this.sex}人`)
+            }
+        }
+        var h1 = new all('老三',21,'男')
+        var h2 = new all('阿珍',26,'女')
+        console.log(h1)
+        h1.say()
+        h2.say()
+
+
+
+
+    </script>
+</body>
+</html>

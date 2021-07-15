@@ -1,0 +1,33 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.请求对象
+        let xhr =new XMLHttpRequest()
+        
+        //2.设置请求参数
+        //请求参数的作用
+        xhr.open('post','http://192.168.6.191/ajax/server2.php',true)
+        //设置请求头
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+        // 3.提交给服务器，并且设置请求参数。
+        xhr.send("name=list&age=19");
+
+        // xhr.timeout = 1000*20
+
+        //4.接收服务器端的响应
+        xhr.onreadystatechange = function(){
+            if(4 == this.readyState && 200 ==this.status){
+                console.log(this.readyState)//返回一个无序号短整型数字，请求状态码
+                console.log(this.responseText)
+            }
+        }
+    </script>
+</body>
+</html>

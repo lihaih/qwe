@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var obj = {name:'hello'}
+        var o2 = obj
+
+        var set = new Set([1,2,2,2,2,3,45,6,59,obj])
+        console.log(set.size)
+        console.log(set.values())
+        console.log(set.entries())
+        // console.log(set.forEach())
+        set.clear()
+        set.add('hello')
+        set.add('hello')
+        set.add('hello')
+        set.add('hello')
+        set.add('hello')
+        set.add('1')
+        set.add(1)
+        set.add(true)
+        set.add(true)
+        console.log(set.delete(true))
+        console.log(set.has('hello'))
+        console.log(set.size,[...set])
+        
+
+
+
+    </script>
+</body>
+</html>

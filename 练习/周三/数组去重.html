@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        Array.prototype.mySet = function(){
+            let arr = []
+            let old = this
+            if(!old.length) {
+                return []
+            }
+            arr[0] = old[0]
+
+            function getIndex(array, value){
+                for(let i=0; i<array.length; i++){
+                    if(array[i] == value){
+                        return i
+                    }
+                }
+                return -1
+            }
+            for (let i=1; i<old.length; i++){
+                if(-1 == getIndex(arr,old[i])){
+                    arr[arr.length] = old[i]
+                }
+            }
+            return arr
+        }
+        let arr = [1,2,2,3,56,4,5,79,5,4,0]
+        console.log(arr)
+        console.log(arr.mySet())
+        
+
+    </script>
+</body>
+</html>

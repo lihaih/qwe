@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background:red;
+    }
+
+</style>
+<body>
+    <div class="box" id="box" name="box"></div>
+
+    <script>
+        let qq = document.getElementById('box')
+        let qq1 = document.getElementsByClassName('box')[0]
+        let qq2 = document.getElementsByName('box')[0]
+        let qq3 = document.getElementsByTagName('div')[0]
+        let qq4 = document.querySelector('#box')
+        let qq5 = document.querySelectorAll('.box')[0]
+        console.log(qq)
+        console.log(qq1)
+        console.log(qq2)
+        console.log(qq3)
+        console.log(qq4)
+        console.log(qq5)
+    </script>
+</body>
+</html>

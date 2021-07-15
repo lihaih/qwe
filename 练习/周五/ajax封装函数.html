@@ -1,0 +1,34 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-17 19:15:05
+ * @LastEditTime: 2020-09-19 14:26:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\ajax封装函数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./lib/ajax.js"></script>
+    <script>
+        ajax({
+            method:'post',//get/post
+            url:'http://192.168.6.191/ajax/server2.php',
+            data:{
+                name:'list',
+                age:'18'
+
+            },
+           www:function (res) {
+                console.log(res)
+            }
+        })
+
+    </script>
+</body>
+</html>

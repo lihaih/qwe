@@ -1,0 +1,63 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-21 11:41:25
+ * @LastEditTime: 2020-09-21 14:32:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周六\Canvas.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tutorial{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="tutorial" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById('tutorial');
+        var paint  = canvas.getContext('2d');   
+        paint.fillStyle = 'red'
+        paint.strokeStyle = 'blue'
+        // paint.strokeRect(0, 0, 100, 200)
+
+        paint.beginPath()
+        paint.moveTo(0,0)
+        paint.lineTo(100,0)
+        paint.lineTo(100,100)
+        paint.lineTo(0,100)
+        paint.closePath()
+        paint.stroke()
+
+        paint.beginPath()
+        paint.moveTo(150,50)
+        paint.lineTo(170,50)
+        paint.lineTo(180,30)
+        paint.lineTo(190,70)
+        paint.lineTo(200,35)
+        paint.lineTo(210,60)
+        paint.lineTo(215,45)
+        paint.lineTo(220,70)
+        paint.lineTo(230,35)
+        paint.lineTo(240,60)
+        paint.lineTo(250,10)
+        paint.lineTo(260,75)
+        paint.lineTo(270,45)
+        paint.lineTo(280,62)
+        paint.lineTo(290,50)
+        paint.lineTo(300,50)
+        paint.stroke()
+
+        
+        paint.beginPath()
+        paint.arc(200,200,50,0,180*Math.PI/360,false)
+        paint.fill()
+    </script>
+</body>
+</html>

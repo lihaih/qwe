@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = [1,12,3,5,3,8]
+        fun(arr1,3,undefined)
+        console.log(arr1)
+
+        function fun(arr, findVal, setVal) {
+            for(const i in arr){
+                if( findVal == arr[i]){
+                    arr[i] = setVal
+                }              
+            }
+        }
+
+    </script>
+</body>
+</html>

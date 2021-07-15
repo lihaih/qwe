@@ -1,0 +1,99 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-19 17:30:54
+ * @LastEditTime: 2020-09-21 14:24:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\元素拖拽.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background:red;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        目标元素
+    </div>
+    <div class="box1" draggable="true" >
+        拖我
+    </div>
+    <script>
+    let box = document.querySelector('.box')
+    let box1 = document.querySelector('.box1')
+    /*******************拖拽元素事件********************/
+    // 开始拖拽
+    box1.ondragstart = function (ev) {
+        // console.log('开始拖拽')
+    }
+    // 结束拖拽
+    box1.ondragend = function (ev) {
+        // console.log('结束拖拽')
+    }
+    // 会连续触发
+    box1.ondrag = function (ev) {
+        // console.log('会连续触发')
+    }
+    /*******************目标元素事件********************/
+    // 拖拽元素进入
+    box.ondragenter  = function (ev) {
+        console.log('拖拽元素进入')
+    }
+    // 拖拽元素离开
+    box.ondragleave  = function () {
+        console.log('拖拽元素离开')
+    }
+    // 拖拽元素悬停时连续触发
+    box.ondragover  = function(event){
+        // 阻止默认事件，否则 ondrop 不会被触发
+        event.preventDefault();
+        console.log('拖拽元素悬停时连续触发')
+    }
+    // 拖拽元素释放，必须在 ondragover 中阻止默认事件，否则不能触发
+    box.ondrop  = function(ev){
+        console.log('拖拽元素释放')
+    }
+    box1.ondragstart = function (ev) {
+        ev.dataTransfer.effectAllowed = 'copy'
+        console.log('动了')
+    }
+
+
+    // var drag = document.getElementById('drag');
+    // var target = document.getElementById('target');
+
+    // drag.ondragstart = function(ev){
+    //     var ev = ev || window.ev;
+    //     //传递数据给目标元素
+    //     ev.dataTransfer.setData('k1','一个测试数据');
+    //     this.style.background = 'red';
+    // }
+
+    // target.ondragover = function(ev){
+    //     var ev = ev || window.event;
+    //     //阻止默认事件，否则 ondrop 事件不能触发。
+    //     ev.preventDefault(); 
+    // }
+    // // 拖拽元素释放
+    // target.ondrop = function(ev){
+    //     var ev = ev || window.event;
+    //     //获取拖拽元素数据
+    //     alert(ev.dataTransfer.getData('k1'));
+    // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        <span class="n"></span>年<span class="y"></span>月<span class="r"></span>日
+        <span class="h">00</span>:<span class="m">00</span>:<span class="s">00</span>
+    </h2>
+
+
+    <script>
+
+        var n = document.querySelector('.n')
+        var y = document.querySelector('.y')
+        var r = document.querySelector('.r')
+        var h = document.querySelector('.h')
+        var m = document.querySelector('.m')
+        var s = document.querySelector('.s')
+        // var ma = document.querySelector('.ms')
+        var all = setInterval (function(){
+            var time = new Date()
+            console.log()
+            n.innerHTML = time.getFullYear()
+            y.innerHTML = time.getMonth()+1
+            r.innerHTML = time.getDate()
+
+            h.innerHTML = time.getHours()
+            m.innerHTML = time.getMinutes()
+            s.innerHTML = time.getSeconds()
+
+            // ms.innerHTML = time.getMilliseconds()
+        })
+
+    </script>
+</body>
+</html>

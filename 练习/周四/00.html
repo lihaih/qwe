@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="mul">
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>草莓</li>
+        <li>樱桃</li>
+    </ul>
+    <script>
+        var mUl = document.getElementById("mul");
+        var lis = document.getElementsByTagName("li");
+    
+        mUl.onclick = function(ev){
+           var event = ev ||window.event;
+            //获取事件源
+            
+            var target = event.target || event.srcElement;
+            // 必须是由li触发
+            if("li" == target.nodeName.toLowerCase()){
+               alert(target.innerHTML);
+            }
+        }
+    </script>
+</body>
+</html>

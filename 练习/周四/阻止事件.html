@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .all{
+            width: 500px;
+            height: 500px;
+            border:1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <input type="text"><button>提交</button>
+    </div>
+    <script>
+        let all = document.querySelector('.all')
+        all.oncontextmenu = function(ev){
+            ev.preventDefault()
+        }
+    </script>
+</body>
+</html>

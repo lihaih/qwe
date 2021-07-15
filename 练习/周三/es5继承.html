@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function all(name,age){
+            this.name = name
+            this.age = age  
+            this.run = function(){
+                // alert('run...')
+            }
+        }
+        all.prototype.say = function(){
+            alert('我的名字叫：'+this.name)
+        }
+        function arr(name, age, job){
+            all.call(this,name,age)
+            this.job = job
+        }
+        arr.prototype = all.prototype
+        arr.prototype.work = function(){
+            // alert(this.job)
+        }
+
+        var m1 = new arr('小明',22,'傻子')
+        m1.say()
+        // m1.run()
+        m1.work()
+
+    </script>
+</body>
+</html>

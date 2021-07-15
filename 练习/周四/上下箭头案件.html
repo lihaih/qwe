@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            width: 300px;
+            margin: 10px auto;
+        }
+        ul>li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(206, 206, 206);
+            border: 1px solid #fff;
+            position: relative;
+            color: #fff;
+        }
+        li>span{
+            flex-grow: 1;
+            font-size: 3em;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .btns{
+            display: flex;
+        }
+        .btns>*{
+           width: 20px;
+           height: 20px;
+           text-align: center;
+           line-height: 20px;
+            background: rgba(70, 70, 226, 0.849);
+            margin-right: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .btns>*:hover{
+            background: rgb(230, 20, 20);
+        }
+        
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>
+            <span>1</span>
+            <div class='btns'>
+                <span class="prev">&and;</span>
+                <span class="next">&or;</span>
+            </div>
+        </li>
+        <li>
+            <span>2</span>
+            <div class='btns'>
+                <span class="prev">&and;</span>
+                <span class="next">&or;</span>
+            </div>
+        </li>
+        <li>
+            <span>3</span>
+            <div class='btns'>
+                <span class="prev">&and;</span>
+                <span class="next">&or;</span>
+            </div>
+        </li>
+        <li>
+            <span>4</span>
+            <div class='btns'>
+                <span class="prev">&and;</span>
+                <span class="next">&or;</span>
+            </div>
+        </li>
+        <li>
+            <span>5</span>
+            <div class='btns'>
+                <span class="prev">&and;</span>
+                <span class="next">&or;</span>
+            </div>
+        </li>
+    </ul>
+    <script>
+        let btns = document.querySelectorAll('.btns')
+        let list = document.querySelector('.list')
+        for(let i=0; i<btns.length; i++){
+            let children =  btns[i].children
+            children[0].onclick = function(){
+                let cEl =  this.offsetParent
+                let pEL = this.offsetParent.previousElementSibling
+                if(!pEL){ //已经到顶了
+                    return
+                }
+                // console.log( cEl, pEL )
+                list.insertBefore(cEl,pEL)
+
+            }
+            children[1].onclick = function(){ 
+                let all = this.offsetParent
+                let arr = this.offsetParent.nextElementSibling
+                list.insertBefore(arr,all)
+                // console.log(all,arr)
+                
+            }
+        }
+
+
+    
+    </script>
+</body>
+</html>

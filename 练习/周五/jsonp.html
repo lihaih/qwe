@@ -1,0 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-18 15:29:03
+ * @LastEditTime: 2020-09-18 20:49:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\jsonp.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">水果</button>
+    <button class="btn2">颜色</button>
+    <ul class="fruits"></ul>
+    <ol class="colors"></ol>
+
+    <script>
+        function fruits(data){
+            let fruits = document.querySelector('.fruits')
+            for(const val of data){
+                let li = document.createElement('li')
+                li.innerHTML = val.name
+                fruits.appendChild(li)
+            }
+            document.body.removeChild(document.querySelector('#fruits'))
+        }
+        
+        function colors(data){
+            let colors =  document.querySelector('.colors')
+            for(const val of data){
+                let li = document.createElement('li')
+                li.innerText = val
+                colors.appendChild(li)
+            }
+            document.body.removeChild(document.querySelector('#color'))
+        }
+    </script>
+
+    <!-- <script src="http://192.168.6.191/jsonp/jsonp.php?jsoncallback=fruits&name=fruits"></script>
+    <script src="http://192.168.6.191/jsonp/jsonp.php?jsoncallback=colors&name=colors"></script> -->
+
+    <script>
+        let fruitsBtn = document.querySelector('.btn1')
+        let colorBtn= document.querySelector('.btn2')
+        fruitsBtn.onclick = function(){
+            let st = document.createElement('script')
+            st.src = 'http://192.168.6.191/jsonp/jsonp.php?jsoncallback=fruits&name=fruits'
+            st.id = 'fruits'
+            document.body.appendChild(st)
+        }
+        colorBtn.onclick = function(){
+            let st = document.createElement('script')
+            st.src = 'http://192.168.6.191/jsonp/jsonp.php?jsoncallback=colors&name=colors'
+            st.id = 'color'
+            // 加载script 发送请求
+            document.body.appendChild(st)
+        }
+    </script>
+</body>
+</html> 

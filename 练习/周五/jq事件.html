@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li class="box1">1</li>
+        <li class="box2">2</li>
+        <li class="box3">3</li>
+        <li class="box4">4</li>
+        <li class="box5">5</li>
+        <li class="box6">6</li>
+        <li class="box7">7</li>
+        <li class="box8">8</li>
+        <li class="box9">9</li>
+        <li class="box10">10</li>
+    </ul>
+
+    <script src="./JQ/jquery.min.js"></script>
+
+    <script>
+        $('.box5').click(123,function(ev){
+            console.log(ev,ev.data)
+        })
+        $('.box5').click(ev=>{
+            console.log(ev)
+        })
+
+    </script>
+</body>
+</html>

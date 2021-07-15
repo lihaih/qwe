@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .nums{
+            list-style: none;
+            display:flex;
+        }
+        .nums li{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background:gray;
+            text-align: center;
+        }
+        /* .nums>li:hover{
+            color:#fff;
+            background:rgb(56, 55, 55);
+        } */
+        .man{
+            position: relative;
+        }
+        .box1,.box2,.box3{
+            width: 300px;
+            height: 300px;
+            /* display: none; */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box1{
+            background:red;
+        }
+        .box2{
+            background:yellow;
+        }
+        .box3{
+            background:blue;
+        }
+        .all{
+            display: block;
+        }
+       
+    </style>
+</head>
+<body>
+    <ul class="nums">
+        <li class="lx1">1</li>
+        <li class="lx2">2</li>
+        <li class="lx3">3</li>
+    </ul>
+    <div class="man">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+    <script>
+        let nums = document.querySelector('.nums')
+        nums.onmouseover = function ( ev){
+           if('LI' == ev.target.nodeName){
+            console.log( ev.target.innerText )
+            ev.target.style.background = 'red'
+           }
+        }
+        nums.onmouseout = function ( ev){
+           if('LI' == ev.target.nodeName){
+            ev.target.style.background = ''
+           }
+        }
+        nums.onmouseover = function( ev){
+            if('LI' == ev.target.nodeName){
+                if(ev.target.classList.contains('lx1')){
+                    strSelect = 'box1'
+                }else if(ev.target.classList.contains('lx2')){
+                    strSelect = 'box2'
+                }else if(ev.target.classList.contains('lx3')){
+                    strSelect = 'box3'
+                }
+            }
+        }
+        
+     
+
+    </script>
+
+</body>
+</html>

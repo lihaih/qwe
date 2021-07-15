@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <button class="btn">按钮</button>
+    <script>
+        /*
+            1 对象中，this表示当前对象
+            2. 在普通函数中。this指向全局对象window
+            3. 单独使用时this指向window
+            4. 定时器中指向window
+            5. 在事件中 this 指向持有该事件方法的DOM对象
+            6. 在箭头函数 this 指向程序的上下文
+        
+        */
+        var obj = {
+            name: '小明',
+            age: 19,
+            say: function () {
+                // 
+                console.log(this)
+            }
+        }
+        console.log(obj)
+        obj.say()
+        class Person {
+            constructor(name) {
+                this.name = name
+            }
+            say() {
+                console.log(this)
+            }
+        }
+
+        var p1 = new Person('h2')
+        var p2 = new Person('h3')
+
+        p1.say()
+        p2.say()
+        console.log('___________________________________________________________')
+
+        function fun1() {
+            console.log(this)
+        }
+
+        fun1()
+        console.log('___________________________________________________________')
+        console.log(this)
+        console.log('___________________________________________________________')
+
+        setTimeout(function () {
+            console.log(this)
+        }, 0);
+
+        console.log('___________________________________________________________')
+
+        var btn = document.querySelector('.btn')
+        console.log(btn)
+        btn.onclick = function () {
+            //    console.log( this )
+            var This = this
+            setTimeout(function () {
+                console.log(this) //window
+                // console.log( This ) // btn
+            }, 0);
+
+            // 
+            setTimeout( () => {
+                console.log('箭头函数', this ) //this
+        } , 0);
+        }
+
+        console.log('___________________________________________________________')
+
+        setTimeout( () => {
+            console.log( this ) //this
+        } , 0);
+
+    </script>
+</body>
+
+</html>

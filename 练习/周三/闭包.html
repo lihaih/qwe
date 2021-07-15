@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function out(all){
+            let num = all
+            function inner(){
+                num++
+                return num
+            }
+            return inner
+        }
+        let inn = out(19)
+        console.log( inn() )
+        console.log( inn() )
+        console.log( inn() )
+        console.log( inn() )
+        
+    </script>
+
+</body>
+</html>

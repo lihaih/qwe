@@ -1,0 +1,45 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-17 18:55:57
+ * @LastEditTime: 2020-09-17 19:03:18
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\promise1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function pTest(num) {
+    return new Promise(function (resolve, reject) {
+        if (10 > num) {
+            resolve('成功')
+        } else {
+            reject('失败')
+        }
+    })
+}
+let nums = [1, 3, 3, 9]
+//    获取 promise 实例集合
+let ps = nums.map((item) => {
+    return pTest(item)
+})
+
+/*所有实例状态成功最终状态才成功，否则就失败*/
+Promise.all(ps)
+	// ps 实例中所有状态都是 resolve时才触发then方法
+    .then(res => {
+    	console.log(res)
+	})
+	// ps实例中只要有一个状态为 reject 就会触发 catch 方法
+    .catch(err => {
+    	console.log(err)
+	})
+    </script>
+</body>
+</html>

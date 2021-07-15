@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var all = [
+            [
+                [1,46,894,654654546545],
+                [7,9,56]
+            ],
+            [
+                [12,21,213],
+                [152,54,87]
+            ],
+        ]
+        for(var i=0; i<all.length;i++){
+            for(var j=0; j<all[i].length;j++){
+                for(var k=0; k<all[i][j].length;k++){
+                    console.log(all[i][j][k])
+                }
+                console.log('--------------')
+            }
+            console.log('================')
+        }
+        console.log('+++++++++++===========+++++++++++++')
+
+        for(const i in all){
+            for(const j in all[i]){
+                for(const k in all[i][j]){
+                    console.log(all[i][j][k])
+                }
+                console.log('---------')
+            }
+            console.log('==========')
+        }
+        console.log('+++++++++++===========+++++++++++++')
+
+
+        for(const i of all){
+            for(const j of i){
+                for(const k of j){
+                    console.log(k)
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

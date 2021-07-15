@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        
+        class Human{
+            constructor(name){
+                this.name = name
+                console.log('父')
+            }
+        }
+        Human.prototype.hello='hello Human'
+
+
+        // 继承
+        class Man extends Human{
+            // 实例化父类再实例化子类
+            constructor(name,job){
+                // 父类对象
+                super(name)  //必须放在第一行，并且只能有一个
+                console.log('子')
+
+                this.job = job
+            }
+        }
+
+
+        // var h1 = new Human('小明')
+        // // 检查 h1是否有 name属性
+        // console.log(  'name' in h1)
+        // console.log( h1.toString() )
+        // // toString 是继承 object的方法
+        // console.log(  'toString' in h1) // true
+
+        var m1 = new Man('小明','保安')
+
+        // console.log( 'name' in m1 )
+        // console.log( 'job' in h1 )
+        console.log('--------------------------')
+      
+        // console.log( h1.hasOwnProperty('toString') )
+        // console.log( h1.hasOwnProperty('job') )
+        // console.log( m1.hasOwnProperty('name') ) // true
+
+        console.log( m1.hasOwnProperty('hello') )
+
+
+        console.log('--------------------------')
+
+        console.log( m1 instanceof Human )
+        
+
+        
+
+
+    </script>
+</body>
+</html>

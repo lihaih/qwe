@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-18 11:10:18
+ * @LastEditTime: 2020-09-18 15:19:58
+ * @LastEditors: Please set LastEditors
+ * @Dt
+ * @FilePath: \qqq\练习\周五\promise ajax封装.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function ajax(args){
+            if(!args.method){
+                args.method = 'get'
+            }
+            const promise = new Promise(function(resolve,reject){
+                let xhr = null
+                if(window.XMLHttpRequest){
+                    xhr = new XMLHttpRequest()
+                }else{
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP')
+                }
+                let oData = new FormData()
+                for(const key in args.data){
+                    oData.append(key,args.data[key])
+                }
+                xhr.open(args.method, args.url, true)
+                xhr.send(oData)
+                xhr.onreadystatechange = function (){
+                    if(4 == xhr.readyState && 200 == xhr.status){
+                        try{
+                            switch(args.method){
+                                case 'head':
+                                case 'Head':
+                                    return resolve({
+                                        statusText:this.statusText,
+                                        status:this.status,
+                                        url:this.responseURl,
+                                        readyState:this.readyState
+                                    })
+                                default:
+                                    return resolve(JSON.parse(this.response))
+                            }
+                        }catch(error){
+                            resolve(this.response)
+                        }
+                    }else if (4 == xhr.readyState){
+                        reject(new Error(xhr.status))
+                    }
+                }
+            })
+            return promise
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //方法一
+        arr = [1,2,3,4,56,45,99]
+        var arr2 = arr.concat()
+        arr2.length = 3
+        console.log(arr,arr2)
+        //方法二
+        var arr3 = arr.map(function(val){
+            return val
+        })
+        arr3.length = 2
+        console.log(arr,arr3)
+        //方法三
+        var arr4 = []
+        for(const i in arr){
+            arr4[i] = arr[i]
+        }
+        arr4[0] = 'hello'
+        console.log(arr,arr4)
+        //方法四
+        var arr5 = [...arr]
+        arr5.length = 10
+        console.log(arr,arr5)
+        //方法五
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function all(name,age){
+            this.name = name
+            this.age = age
+            this.qwe = function(){
+                console.log(`${this.name}:${this.age}`)
+            }
+        }
+        var p1 = new all('小明',18)
+    
+        delete p1.age
+        console.log(p1 instanceof all)
+        console.log(p1 instanceof num)
+        console.log('name' in p1)
+        console.log('hallo' in p1)
+        console.log(p1.hasOwnProperty('name'))
+        console.log(p1.hasOwnProperty('age'))
+     
+
+
+       
+        
+
+
+    </script>
+</body>
+</html>

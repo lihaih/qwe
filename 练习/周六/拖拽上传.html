@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .box{
+            width: 900px;
+            border: 1px solid gray;
+            margin: 0 auto;
+        }
+        .uploadFileArea{
+            width: 100%;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            font-size: 2em;
+            color: #fff;
+            background: rgba(0, 0, 255, 0.425);
+        }
+        .preview{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .preview img{
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="uploadFileArea">
+            请将上传文件拖拽到这里
+        </div>
+        <ul class="preview">
+            <!-- <li><img src="./img/upload.png" alt=""></li> -->
+        </ul>
+    </div>
+
+    <script src="./lib/ajax.js"></script>
+
+    <script>
+
+        let preview = document.querySelector('.preview')
+
+        let uploadFileArea = document.querySelector('.uploadFileArea')
+        // 拖拽元素在目标元素上悬停
+        uploadFileArea.ondragover = function (ev) {
+            ev.preventDefault();
+            this.innerText = '释放后上传！'
+        }
+        uploadFileArea.ondragleave  = function(ev){
+            this.innerText = '请将上传文件拖拽到这里'
+        }
+         // 拖拽元素在目标元素上释放
+        uploadFileArea.ondrop = function (ev) {
+            ev.preventDefault();
+            // fr.readAsDataURL(ev.dataTransfer.files[0])
+            this.innerText = '请将上传文件拖拽到这里'
+
+
+            let files = ev.dataTransfer.files
+            if(!files.length){
+                console.error( '请选择文件' )
+                return
+            }
+            uploadFile(files)
+           
+        }
+
+        // 图片上传
+        function uploadFile(files, index=0){
+            if(files.length == index){
+                return
+            }
+            ajax({
+                method:'post',
+                url:'http://192.168.6.191/ajax/upload.php',
+                data:{
+                    pic:files[index],
+                    picDir:'img1'
+                }
+            }).then(res=>{
+                let fr =  new FileReader()
+                fr.readAsDataURL(files[index])
+                fr.onload = function(){
+                    console.log( this.result )
+                    preview.innerHTML += `<li><img src="${this.result}"></li>`
+
+                }
+                uploadFile(files, ++index)
+            }).catch(err=>{
+                console.error(err)
+            })
+
+            
+        }
+    </script>
+</body>
+
+</html>

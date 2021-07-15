@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">按钮</button>
+    <script>
+        var btn = document.querySelector('.btn')
+        function fun(...args){
+            console.log(args)
+            // console.log(this)
+        }
+
+        btn.onclick = function(){
+            fun.call(this,123,32,4,true)
+            fun.apply(this,[1,23,234,4,2])
+        }
+
+        var newFun = fun.bind(new String,true,[1,[23,[13]]])
+        newFun(213,532,231)
+        
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let str = 'qq大全, 64456464, 456465464654-ADAS.com, 465789'
+        let re1 = /\d+/g
+        let re2 =/^[1-9]\d{4,10}$/g
+        let arrays = str.match(re1)
+        for(let i=0; i<arrays.length; i++){
+            if(null !=arrays[i].match(re2)){
+                alert(arrays[i] + '是QQ号')
+            }else{
+                alert(arrays[i] + '不是QQ号')
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-19 13:59:40
+ * @LastEditTime: 2020-09-24 08:54:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \qqq\练习\周五\ajax导航栏案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .list{
+            list-style: none;
+            width: 800px;
+            height: 40px;
+            display: flex;
+            margin: 20px auto;
+            background:gray;
+        }
+        .list li a{
+            line-height: 40px;
+            height: 40px;
+            padding: 0 10px;
+            text-decoration: none;
+            color: honeydew;
+            display: block;
+        }
+        .list li a:hover{
+            color: rgb(244, 7, 252);
+            background:rgb(122, 114, 114);
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">      
+        <!-- <li><a href="#">首页</a></li>
+        <li><a href="#">菜鸟笔记</a></li>
+        <li><a href="#">菜鸟工具</a></li>
+        <li><a href="#">参考手册</a></li>
+        <li><a href="#">用户笔记</a></li>
+        <li><a href="#">测验/考试</a></li>
+        <li><a href="#">本地书签</a></li> -->
+
+    </ul>
+    <script src="./lib/ajax.js"></script>
+    <script>
+        ajax({
+            method:'post',//get/post
+            url:'http://192.168.6.191/ajax/server2.php',
+            data:{
+                name:'daoheng',
+                age:'18'
+
+            },
+           www:function (res) {
+                console.log(res)
+                all(res)
+            }
+        })
+
+        function all(data){
+            let list = document.querySelector('.list')
+            let arr =''
+            for(const val of data){
+                arr += `<li><a href="${val.src}">${val.name}</a></li>`
+            }
+            list.innerHTML = arr
+        }
+
+    </script>
+</body>
+</html>

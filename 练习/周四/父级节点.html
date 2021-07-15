@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <div id="div1" style="position: relative;">
+    <div id="div2" >
+        <div id="div3" style="position: absolute;" ></div>
+    </div>
+</div>
+
+<script>
+    var div3 = document.getElementById('div3');
+    
+    console.log(div2.parentNode.id)
+    
+    console.log(div3.offsetParent.id);
+
+
+</script>
+ -->
+
+
+<ul id="box"></ul>
+<script>
+var box = document.getElementById("box"); 
+let lis = ['HTML 教程',
+'HTML',
+'HTML5',
+'XHTML',
+'CSS',
+'CSS3',
+'TCP/IP']
+for(var i=1;i<=lis.length;i++  ){
+    var li = document.createElement("li");
+    li.innerHTML =`<li>${lis[i]}</li>`;
+    box.appendChild(li);
+}
+
+// var box = document.getElementById("box"); 
+// // 创建文档碎片    
+// var fragment = document.createDocumentFragment();
+// // 将新元素添加到文档碎片中
+// for(var i=1;i<=5;i++  ){
+//     var li = document.createElement("li");
+//     li.innerHTML = i;
+//     fragment.appendChild(li);
+// }
+// //将文档碎片添加到 ul 元素。
+// box.appendChild(fragment);
+</script>
+</body>
+</html>

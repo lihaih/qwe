@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "584241",
+      "name": "右箭头",
+      "font_class": "iconfonti",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "1833862",
+      "name": "左箭头",
+      "font_class": "zuojiantou",
+      "unicode": "e735",
+      "unicode_decimal": 59189
+    },
+    {
+      "icon_id": "1984754",
+      "name": "放大镜",
+      "font_class": "magnifier",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "12753674",
+      "name": "相机",
+      "font_class": "xiangji_huaban",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    }
+  ]
+}

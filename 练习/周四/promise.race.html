@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function pTest(s) {
+    return new Promise(function (resolve, reject) {
+        if (0 == s){
+            reject(new Error('时间出错'))
+        }else {
+            setTimeout(() => {
+                resolve(s)
+            },s)
+        } 
+    })
+}
+Promise.race([pTest(7), pTest(10), pTest(5)])
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+    </script>
+</body>
+</html>

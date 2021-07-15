@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            list-style: none;
+            display: flex;
+        }
+        .list li{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn">点我</button>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        let list = document.querySelectorAll('li')
+        let btn = document.querySelector('.btn')
+        var j=0;
+        var x;
+
+        btn.onclick = function(){
+            x=Math.floor((Math.random()*4))
+            for(var j=0; j<list.length; j++){
+                list[j].style.background = ''
+            }  
+            if(x<list.length){
+                list[x].style.background = 'red'    
+                  
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        class Human{
+            constructor(name, age, sex){
+                this.name = name
+                this.age = age
+                this.sex = sex
+            }
+        }
+
+        class Man extends Human{
+            constructor(name, age, job){
+                super(name, age, '男')
+                this.job = job
+            }
+        }
+        var m1 = new Man('小明', '21', '傻子')
+        console.log(m1)
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul{
+        width: 300px;
+        list-style: none;
+        margin:0 auto;
+    }
+    ul li{
+        width: 32px;
+        height: 32px;
+        border:1px solid gray;
+        display:flex;
+        flex-direction:row;
+    }
+    .qw{
+        background-image: url(./img/bg.png);
+    }
+    li:nth-child(2){
+        background-image: url(./img/bg.png);
+        background-position: 0 -32px;
+    }
+    li:nth-child(3){
+        background-image: url(./img/bg.png);
+        background-position: 0 -64px;
+    }
+    li:nth-child(4){
+        background-image: url(./img/bg.png);
+        background-position: -32px 0;
+    }
+    li:nth-child(5){
+        background-image: url(./img/bg.png);
+        /* background-position: -32px -32px; */
+    }
+    li:nth-child(6){
+        background-image: url(./img/bg.png);
+        /* background-position: -32px -64px; */
+    }
+
+</style>
+<body>
+    <script src="./js/qwe.js"></script>
+    <script>
+        console.log('asfdfg')
+        
+
+    </script>
+    <ul>
+         <li class="qw"></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+         <li></li>
+    </ul>
+  
+</body>
+</html>
